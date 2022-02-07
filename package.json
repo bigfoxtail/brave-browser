@@ -236,9 +236,9 @@
       "brave-core": {
         "dir": "src/brave",
         "repository": {
-          "url": "https://github.com/brave/brave-core.git"
+          "url": "https://github.com/bigfoxtail/brave-core.git"
         },
-        "tag": "v1.49.59"
+        "branch": "1.49.59"
       }
     }
   },
