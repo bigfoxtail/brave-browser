@@ -1,6 +1,47 @@
 # Brave Browser
 
 
+## 狐狸修改版
+
+精简组件，优化部分功能设置。
+
+## 环境部署
+
+安装Visual Studio 2019
+从微软官方下载Visual Studio 2019安装包，进入CMD，使用以下方式安装
+```
+PATH_TO_INSTALLER.EXE ^
+--add Microsoft.VisualStudio.Workload.NativeDesktop ^
+--add Microsoft.VisualStudio.Component.VC.ATLMFC ^
+--includeRecommended
+```
+该命令可以自动选择好相关组件，Windows 10 SDK也会一并安装。
+安装Debugging Tools For Windows工具。
+安装Git工具。
+安装Node.js LTS版本。
+安装Python3.9。
+
+使用以下命令初始化：
+```
+git clone https://github.com/brave/brave-browser.git
+cd brave-browser
+npm install --no-save
+npm run init
+```
+注意：请正确配置环境变量，谨慎更换工具版本，以免出现奇怪的问题。
+
+## 编译相关
+
+先用`npm run build -- Debug`进行Debug模式编译，方便排查问题。
+可以正常编译完成后再使用`npm run build -- Debug`进行正式编译。
+编译完成后使用`npm run create_dist -- Release --skip_signing`命令进行打包。
+
+
+
+
+---
+#### 以下为官方说明
+---
 ## Overview
 
 This repository holds the build tools needed to build the Brave desktop browser for macOS, Windows, and Linux.  In particular, it fetches and syncs code from the projects defined in `package.json` and `src/brave/DEPS`:
